@@ -20,9 +20,8 @@ public class EmpleadoController {
     }
 
     @GetMapping(value = "/{idEmpleado}")
-    public Empleado findByName(@PathVariable final String idEmpleado){
-//        return empleadoJpaRespository.findByName(idEmpleado);
-        return null;
+    public Empleado getOne(@PathVariable final Integer idEmpleado){
+        return empleadoJpaRespository.getOne(idEmpleado);
     }
 
     @PostMapping(value = "/load")
