@@ -1,0 +1,18 @@
+/*
+Script generado por Aqua Data Studio 7.0.17 en jul-13-2017 02:58:38 PM
+Objetos: DATABASE
+*/
+DROP DATABASE "halcones";
+
+CREATE DATABASE "halcones"
+	DEFAULT CHARACTER SET latin1
+	DEFAULT COLLATE latin1_swedish_ci;
+
+CREATE TABLE `Empleado` ( 
+	`idEmpleado`	int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	`nombre`    	varchar(25) NULL,
+	`apPaterno` 	varchar(25) NULL,
+	`apMaterno` 	varchar(25) NULL,
+	`edad`      	int(11) NULL,
+	`sexo`      	varchar(25) NULL 
+	)
