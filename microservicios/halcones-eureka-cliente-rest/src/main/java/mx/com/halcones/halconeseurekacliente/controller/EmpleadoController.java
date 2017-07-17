@@ -30,9 +30,9 @@ public class EmpleadoController {
         return empleado;
     }
     
-    @PutMapping(value="/{idEmpleado}")
-    public Empleado updateEmpleado(@PathVariable int idEmpleado, @RequestBody Empleado empleado){
-    	Empleado emp = empleadoJpaRespository.findOne(idEmpleado);
+    @PutMapping(value="/update")
+    public Empleado updateEmpleado(@RequestBody Empleado empleado){
+    	Empleado emp = empleadoJpaRespository.findOne(empleado.getIdEmpleado());
     	if(emp != null){
     		emp.setNombre(empleado.getNombre());
     		emp.setApPaterno(empleado.getApPaterno());
@@ -44,6 +44,17 @@ public class EmpleadoController {
     	}
     	else{
     		return empleado;
+    	}
+    }
+    
+    @DeleteMapping(value="/{idEmpleado}")
+    public String deleteEmpleado(@PathVariable int idEmpleado){
+    	Empleado emp = empleadoJpaRespository.findOne(idEmpleado);
+    	if(emp != null){
+    		empleadoJpaRespository.delete(idEmpleado);
+    		return "Empleado eliminado";
+    	}else{
+    		return "No se pudo eliminar el empleado";
     	}
     }
 }
