@@ -1,0 +1,9 @@
+server:
+  port: ${PORT:8761} # Indica el puerto por defecto donde se iniciará este servicio
+ 
+eureka:
+  client:
+    registerWithEureka: false   #Diciéndole al servidor que no se registre en el registro de servicios
+    fetchRegistry: false
+  server:
+    waitTimeInMsWhenSyncEmpty: 0    #Tiempo de espera para la sincronización posterior
