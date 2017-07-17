@@ -54,7 +54,7 @@ public class EmpleadoController {
     		empleadoJpaRespository.delete(idEmpleado);
     		return "Empleado eliminado";
     	}else{
-    		return "No se pudo eliminar el empleado";
+    		return "No se encuentra el empleado con id "+idEmpleado;
     	}
     }
 }
