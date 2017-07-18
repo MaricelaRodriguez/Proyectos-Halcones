@@ -20,9 +20,8 @@ public class EmpleadoController {
 
     @GetMapping(value = "/{idEmpleado}")
     public Empleado findOne(@PathVariable final Integer idEmpleado){
-        return empleadoJpaRespository.findOne(idEmpleado);
+       return empleadoJpaRespository.findOne(idEmpleado);
     }
-
 
     @PostMapping(value = "/load")
     public Empleado load(@RequestBody final Empleado empleado) {
@@ -54,7 +53,7 @@ public class EmpleadoController {
     		empleadoJpaRespository.delete(idEmpleado);
     		return "Empleado eliminado";
     	}else{
-    		return "No se pudo eliminar el empleado";
+    		return "No se encuentra el empleado con id "+idEmpleado;
     	}
     }
 }
